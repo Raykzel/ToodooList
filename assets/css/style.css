@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "bebas";
+    src: url(/assets/font/BebasNeue-Regular.ttf)
+}
+body {
+    font-family: "bebas";
+    text-align: center;
+}
+header {
+    text-align: center;
+}
+#taskInput, #taskDescription {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+#addTaskBtn, #deleteAllBtn, #deleteDoneBtn {
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+#deleteDoneBtn {
+    background-color: #d9534f;
+}
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+.taskItem {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.deleteBtn {
+    cursor: pointer;
+    color: red;
+    margin-left: 5px;
+}
+.done {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+.title {
+    font-weight: bold;
+}
+.description {
+    font-style: italic;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script defer src="/assets/js/script.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Toodoo Liste</title>
+</head>
+<body>
+    <header>
+        <h1>Toodoo Liste</h1>
+    </header>
+    <div id="app">
+    
+        <div>
+            <label for="taskTitle">Titre de la tâche:</label>
+            <input v-model="newTask.title" type="text" id="taskTitle" placeholder="Titre" required>
+        </div>
+    
+        <div>
+            <label for="taskDescription">Description de la tâche:</label>
+            <textarea v-model="newTask.description" id="taskDescription" placeholder="Description"></textarea>
+        </div>
+    
+        <button @click="addTask" id="addTaskBtn">Ajouter</button>
+        <button @click="deleteAllTasks" id="deleteAllBtn">Supprimer toutes les tâches</button>
+        <button @click="deleteDoneTasks" id="deleteDoneBtn">Supprimer les tâches terminées</button>
+    
+        <ul id="taskList">
+            <li v-for="(task, index) in tasks" :key="index" :class="{ 'taskItem': true, 'done': task.done }" @click="toggleTaskStatus(index)">
+                <span class="title">{{ task.title }}</span>
+                <span v-if="task.description" class="description"> - {{ task.description }}</span>
+                <span @click="deleteTask(index)" class="deleteBtn"><i class="fas fa-trash"></i></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
